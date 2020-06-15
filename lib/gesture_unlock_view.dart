@@ -54,6 +54,7 @@ class GestureUnlockView extends StatefulWidget {
   final Function(List<int>, UnlockStatus) onCompleted;
 
   GestureUnlockView({
+    Key key,
     @required this.size,
     this.type = UnlockType.solid,
     this.padding = 10,
@@ -68,7 +69,7 @@ class GestureUnlockView extends StatefulWidget {
     this.touchRadiusRatio = 0.6,
     this.delayTime = 500,
     this.onCompleted,
-  });
+  }): super(key: key);
   final GestureState _state = GestureState();
 
   @override
