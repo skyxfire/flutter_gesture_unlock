@@ -187,7 +187,7 @@ class GestureState extends State<GestureUnlockView> {
       case UnlockStatus.normal:
       case UnlockStatus.disable:
         _updateRoundStatus(status);
-        _clearAllData();
+        clearAllData();
         break;
       case UnlockStatus.failed:
         for (UnlockPoint round in points) {
@@ -215,7 +215,7 @@ class GestureState extends State<GestureUnlockView> {
   }
 
   void _onPanDown(DragDownDetails e) {
-    this._clearAllData();
+    this.clearAllData();
 //    if (this.onPanDown != null) this.onPanDown();
   }
 
@@ -277,7 +277,7 @@ class GestureState extends State<GestureUnlockView> {
 //    }
   }
 
-  _clearAllData() {
+  clearAllData() {
     for (int i = 0; i < 9; i++) {
       points[i].status = UnlockStatus.normal;
     }
